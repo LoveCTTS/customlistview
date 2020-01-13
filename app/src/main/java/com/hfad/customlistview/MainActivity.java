@@ -1,5 +1,7 @@
 package com.hfad.customlistview;
 
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -12,6 +14,8 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import static com.hfad.customlistview.ListViewAdapter.listViewItemList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        ListView listview;
-        ListViewAdapter adapter;
+        final ListView listview;
+        final ListViewAdapter adapter;
 
          adapter = new ListViewAdapter(); //데이터들을 리스트뷰에 넣을수있도록 어댑터 생성
 
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.test), "Linux", "Linux contents");
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.windows), "Windows", "Windows contents");
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.redhat), "Red hat", "Redhat Linux contents");
+
         //장착된 어뎁터를 통해서 데이터를받고 화면에 set
 
         Add.setOnClickListener(new Button.OnClickListener()
@@ -45,11 +50,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-
-                
+                adapter.addItem(ContextCompat.getDrawable(MainActivity.this, R.drawable.redhat), "Red hat", "Redhat Linux contents");
+                adapter.notifyDataSetChanged();
             }
 
         });
+
+
+
+
 
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener()  //리스트뷰의 아이템 터치에 반응하는 함수

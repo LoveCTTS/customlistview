@@ -28,5 +28,13 @@
             android:textSize="16sp"
             android:textColor="#666666"
             android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Delete"
+            android:text="Delete"
+            />
+
     </LinearLayout>
 </LinearLayout>
