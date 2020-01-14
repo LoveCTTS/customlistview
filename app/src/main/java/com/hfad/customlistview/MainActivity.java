@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         listview.setAdapter(adapter2);
         //어뎁터를 리스트뷰에 장착
 
-        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.test), "Linux", "Linux contents", "Delete");
-        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.windows), "Windows", "Windows contents", "Delete");
-        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.redhat), "Red hat", "Redhat Linux contents", "Delete");
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.test), "Linux", "Linux contents");
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.windows), "Windows", "Windows contents");
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.redhat), "Red hat", "Redhat Linux contents");
 
         //장착된 어뎁터를 통해서 데이터를받고 화면에 set
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) //OnClickListener안의 OnClick을 커스터마이징하여 사용하며, view형태의 변수를 인자로 받음
             {
-                adapter2.addItem(ContextCompat.getDrawable(MainActivity.this, R.drawable.redhat), "Red hat", "Redhat Linux contents", "Delete");
+                adapter2.addItem(ContextCompat.getDrawable(MainActivity.this, R.drawable.redhat), "Red hat", "Redhat Linux contents");
                 //이미지파일은 ContextCompat클래스의 getDrawable 함수를 사용하여 이미지를 불러오고, 나머지는 텍스트를 인자로보냄)
                 adapter2.notifyDataSetChanged();
             }

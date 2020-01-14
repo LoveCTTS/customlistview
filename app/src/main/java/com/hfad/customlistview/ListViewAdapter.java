@@ -50,7 +50,7 @@ public class ListViewAdapter extends BaseAdapter { //xml에 있는 뷰들을 리
         ImageView iconImageView = (ImageView) convertView.findViewById(R.id.imageView1);
         TextView titleTextView = (TextView) convertView.findViewById(R.id.textView1);
         TextView descTextView = (TextView) convertView.findViewById(R.id.textView2);
-        Button buttonView = (Button) convertView.findViewById(R.id.Delete);
+
         //위젯찾기(객체로 생성된 listview_item(즉, 리스트뷰에 들어갈 뷰들)들의 정보가 저장된 convertView를 통해서 ID를 통해 각 뷰들의 View를 찾아내서 주소를 각 변수에 저장
 
 
@@ -61,7 +61,7 @@ public class ListViewAdapter extends BaseAdapter { //xml에 있는 뷰들을 리
         iconImageView.setImageDrawable(listViewItem.getIcon());
         titleTextView.setText(listViewItem.getTitle());
         descTextView.setText(listViewItem.getDesc());
-        buttonView.setText(listViewItem.getButton());
+
 //리스트뷰에 저장될 한 행의 4개의 뷰들을 listViewItem에 저장
 
 
@@ -78,13 +78,13 @@ public Object getItem(int position){
         return listViewItemList.get(position);
 } // id를 얻어와서 오브젝트로 반환
 
-public void addItem(Drawable icon,String title,String desc,String DeleteButton) {
+public void addItem(Drawable icon,String title,String desc) {
     ListViewItem item = new ListViewItem();
 
     item.setIcon(icon);
     item.setTitle(title);
     item.setDesc(desc);
-    item.setButton(DeleteButton);
+    ;
 
     listViewItemList.add(item);
 } //listview의 배열에 이미지,제목 2개, 버튼 한개 저장
