@@ -2,4 +2,6 @@
     <string name="app_name">customlistview</string>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="TOAST_MESSAGE_ON">"Turn On"</string>
+    <string name="TOAST_MESSAGE_OFF">Turn Off</string>
 </resources>

@@ -4,32 +4,39 @@ package com.hfad.customlistview;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.graphics.drawable.Drawable;
+
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 
-import static com.hfad.customlistview.ListViewAdapter.listViewItemList;
+import android.widget.Switch;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setActionBar();
 
 
-        Button Add = (Button) findViewById(R.id.add);
+
+
         final ListView listview;
         final ListViewAdapter adapter2;
-        Button Delete2=(Button)findViewById(R.id.Delete);
+        Button Add = (Button) findViewById(R.id.add);
 
 
-        adapter2= new ListViewAdapter();
+
+
+
+               adapter2 = new ListViewAdapter();
         //데이터들을 리스트뷰에 넣을수있도록 어댑터 생성
 
         listview = (ListView)findViewById(R.id.listview1);
@@ -56,19 +63,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        Delete2.setOnClickListener(new Button.OnClickListener()
-        {
 
-            @Override
-            public void onClick(View view)
-            {
-                final int position = listview.getPositionForView((View)view.getParent());
-                listViewItemList.remove(position);
-                adapter2.notifyDataSetChanged();
 
-            }
 
-        });
+
 
 
 
@@ -76,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private void setActionBar(){
+        CustomActionBar ca = new CustomActionBar(this,getSupportActionBar());
+        ca.setActionBar();
+    }
+
 }
 
