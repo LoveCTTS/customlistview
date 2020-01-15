@@ -1,6 +1,7 @@
 package com.hfad.customlistview;
 
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -23,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setActionBar();
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("분실방지");
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -73,10 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
-    private void setActionBar(){
-        CustomActionBar ca = new CustomActionBar(this,getSupportActionBar());
-        ca.setActionBar();
     }
 
 }
